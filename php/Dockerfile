@@ -18,6 +18,8 @@ RUN apt update \
             pdo_pgsql \
             pgsql
 
+RUN apt-get install -y nodejs npm && npm install n -g && n 14.15.3
+
 WORKDIR /var/www/laravel_docker
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
