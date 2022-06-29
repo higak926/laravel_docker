@@ -1,5 +1,8 @@
 FROM php:8.0-apache
 
+RUN cd /etc/apache2/mods-enabled \
+    && ln -s ../mods-available/rewrite.load
+
 RUN apt update \
         && apt install -y \
             g++ \
